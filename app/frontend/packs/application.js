@@ -7,5 +7,5 @@ import Rails from "@rails/ujs"
 
 Rails.start()
 
-
+const images = require.context('../images', true)
 import '../js/bootstrap_js_files.js'  

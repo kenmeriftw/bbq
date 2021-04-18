@@ -1,6 +1,3 @@
-// Import Bootstrap v5
-@import "~bootstrap/scss/bootstrap";
-
 .event-info {
   position: relative;
   color: white;
@@ -18,7 +15,7 @@
 
   background-size: cover;
   background-position: center;
-  background-image: url('../images/event.jpg');
+  background-image: url('../images/event_thumb.jpg');
 
   filter: blur(5px);
   -webkit-filter: blur(5px);
