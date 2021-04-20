@@ -1,4 +1,6 @@
 require "active_support/core_ext/integer/time"
+require 'action_mailer'
+
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -45,7 +47,6 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -58,4 +59,6 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 end

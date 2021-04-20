@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>BBQ!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,21 +10,28 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4">
-        <%= link_to "BBQ!", root_path, class: "text-white h4" %>
-        <p class="text-muted">Welcome to our event little network!</p>
-      </div>
-    </div>
-
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
+  <body class="d-flex flex-column h-100">
+    <div class="container py-3">
+        <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+          <%= link_to 'BBQ Application', root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+              <% if user_signed_in? %>
+                <span class="me-3 py-2 text-dark text-decoration-none">Nice to see you, <%= current_user.name %></span>
+                <%= link_to 'Profile', current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
+              <% else %>
+                <%= link_to 'Login', new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+                <%= link_to 'Sign up', new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+              <% end %>
+            </nav>
+          </header>
+          <%= render 'partials/alerts' %>
     <%= yield %>
+    </div>
+    <footer class="footer mt-auto py-2 bg-light">
+      <div class="container">
+        <span class="text-muted">bbq network application by knmrftw</span>
+      </div>
+    </footer>
   </body>
 </html>

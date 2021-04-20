@@ -18,25 +18,13 @@
 
   background-size: cover;
   background-position: center;
-  background-image: url('../images/event.jpg');
+  background-color: #FF9933;
 
   filter: blur(5px);
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
-}
-
-.event-description * {
-  color: white;
-}
-
-.event-description a {
-  color: #d0d0ff;
-}
-
-.event-description small {
-  color: #e0e0e0;
 }
 
 .event-info-inner {
@@ -87,4 +75,6 @@
 
 .thumbnail-inner {
   padding: 20px 4px 4px;
+  background: url('../images/party.jpeg');
+  background-size: cover;
 }

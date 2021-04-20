@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # корень сайта
+  devise_for :users
+  
   root "events#index"
 
   resources :events
