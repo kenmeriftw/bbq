@@ -1,0 +1,29 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %> 
+  <main class="form-signin text-center">
+    <form>
+      <img class="mb-4" src="https://www.eventer.cc/wp-content/uploads/2019/01/logo-carre%CC%81-1-1.png" alt="Eventer" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating">
+        <%= f.text_field :email, autofocus: true, placeholder: "Email address", class: "form-control", id: "floatingInput" %>
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <%= f.text_field :password, placeholder: "Password", type: "password", class: "form-control", id: "floatingPassword" %>
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <% if devise_mapping.rememberable? %>
+      <div class="checkbox mb-3">
+        <label>
+          <%= f.check_box :remember_me %> Remember me
+        </label>
+      </div>
+      <% end %>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; by knmrftw, 2021</p>
+    </form>
+    <%= render "devise/shared/links" %>
+  </main>
+<% end %>

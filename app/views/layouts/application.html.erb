@@ -20,7 +20,7 @@
                 <%= link_to 'Profile', current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
               <% else %>
-                <%= link_to 'Login', new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+                <%= link_to 'Sign in', new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
                 <%= link_to 'Sign up', new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
               <% end %>
             </nav>
