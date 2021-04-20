@@ -7,7 +7,7 @@
       <div class="caption">
         <div class="event-description">
           <%= link_to event.title, event_path(event), class: "fs-5 text-decoration-none" %>
-          <p class="fs-6 text-muted"><%= event.datetime %></p>
+          <p class="fs-6 text-muted"><%= l event.datetime, format: :long %></p>
           <div class="buffer-both"><%= event.address %></div>
         </div>
       </div>

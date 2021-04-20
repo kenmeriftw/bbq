@@ -13,7 +13,7 @@
   <body class="d-flex flex-column h-100">
     <div class="container py-3">
         <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-          <%= link_to 'BBQ Application', root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
+          <%= link_to t('app.name'), root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
               <% if user_signed_in? %>
                 <span class="me-3 py-2 text-dark text-decoration-none">Nice to see you, <%= current_user.name %></span>
@@ -30,7 +30,7 @@
     </div>
     <footer class="footer mt-auto py-2 bg-light">
       <div class="container">
-        <span class="text-muted">bbq network application by knmrftw</span>
+        <span class="text-muted">bbq network application by <%= t('app.company') %></span>
       </div>
     </footer>
   </body>

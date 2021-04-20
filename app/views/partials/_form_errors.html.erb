@@ -3,12 +3,11 @@
 <% if errors.any? %>
   <div class="alert alert-danger">
     <div class="lead buffer-bottom">
-      В вашей форме <%= errors.count %> ошибок
+      В вашей форме <%= t :mistake, count: errors.count %>
     </div>
-
     <ul>
-      <% errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% model.errors.each do |error| %>
+        <li><%= error.attribute %> <%= error.message %></li>
       <% end %>
     </ul>
   </div>
