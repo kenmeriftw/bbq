@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html class="h-100">
   <head>
-    <title>BBQ!</title>
+    <title><%= t('app.name')%></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="shortcut icon" type="image/png" href="<%= asset_pack_path('media/images/bbq.png') %>" >
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
@@ -16,12 +17,12 @@
           <%= link_to t('app.name'), root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
             <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
               <% if user_signed_in? %>
-                <span class="me-3 py-2 text-dark text-decoration-none">Nice to see you, <%= current_user.name %></span>
+                <span class="me-3 py-2 text-dark text-decoration-none"><%= t('app.header_greetings') %><%= current_user.name %></span>
                 <%= link_to 'Profile', current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
               <% else %>
-                <%= link_to 'Sign in', new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
-                <%= link_to 'Sign up', new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+                <%= link_to t('views.signingin.sign_in'), new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+                <%= link_to t('views.registrations.sign_up'), new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
               <% end %>
             </nav>
           </header>
@@ -29,8 +30,11 @@
     <%= yield %>
     </div>
     <footer class="footer mt-auto py-2 bg-light">
-      <div class="container">
-        <span class="text-muted">bbq network application by <%= t('app.company') %></span>
+      <div class="container text-muted">
+        <span><%= t('app.footer')%></span>
+        <script>
+          document.write("&copy; "+ new Date().getFullYear());
+        </script>
       </div>
     </footer>
   </body>

@@ -5,7 +5,7 @@
 
   <% if @user == current_user %>
     <p class="buffer-top">
-    <%= link_to "Edit my profile", edit_user_path(@user),
+    <%= link_to t('views.users.show.header'), edit_user_path(@user),
       class: 'btn btn-outline-success' %>
     </p>
   <% end %>
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-md-12">
       <% if @user.events.any? %>
-        <h3>This nice person organized:</h3>
+        <h3><%= t('views.users.show.subheader') %></h3>
         <div class="row">
           <%= render partial: 'events/event', collection: @user.events %>
         </div>

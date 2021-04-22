@@ -94,19 +94,16 @@
 }
 
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-bottom: 15px;
+  border-radius: 2px;
 }
 
 .form-signin input[type="password"] {
-  margin-bottom: -1px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-bottom: 15px;
+  border-radius: 2px;
 }
 
 .form-signin input[type="password_confirmation"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-bottom: 30px;
+  border-radius: 2px;
 }

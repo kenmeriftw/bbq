@@ -1,18 +1,18 @@
 <div class="p-3 pb-md-4 mx-auto text-center">
 
 
-  <h1 class="display-4 fw-normal">Events</h1>
+  <h1 class="display-4 fw-normal"><%= t('views.events.index.header') %></h1>
   <p class="fs-5 text-muted">
-    So, hello, eventer*!
-  <p class="fs-7 text-muted">
-    *Welcome to our tiny network for 'eventers' - people who organize parties and would like to share it with friends.
-  </p>
-  <p class="fs-6 text-muted">
-    Created for RailsGarnet 2021 course.
-  </p>
+    <%= t('views.events.index.greetings') %>
+      <p class="fs-7 text-muted">
+        <%= t('views.events.index.welcome') %>
+      </p>
+    <p class="fs-6 text-muted">
+      <%= t('views.events.index.created') %>
+    </p>
   </p>
   <div class="buffer-both">
-    <%= link_to 'New event' , new_event_path, class: 'btn btn-lg btn-outline-success' %>
+    <%= link_to t('views.events.index.new_event') , new_event_path, class: 'btn btn-lg btn-outline-success' %>
   </div>
 </div>
 
