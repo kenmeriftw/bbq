@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html class="h-100">
-  <head>
-    <title><%= t('app.name')%></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <link rel="shortcut icon" type="image/png" href="<%= asset_pack_path('media/images/bbq.png') %>" >
-    <%= stylesheet_pack_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-  </head>
+<head>
+  <title><%= t('app.name')%></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body class="d-flex flex-column h-100">
-    <div class="container py-3">
-        <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-          <%= link_to t('app.name'), root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
-            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-              <% if user_signed_in? %>
-                <span class="me-3 py-2 text-dark text-decoration-none"><%= t('app.header_greetings') %><%= current_user.name %></span>
-                <%= link_to 'Profile', current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
-              <% else %>
-                <%= link_to t('views.signingin.sign_in'), new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
-                <%= link_to t('views.registrations.sign_up'), new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
-              <% end %>
-            </nav>
-          </header>
-          <%= render 'partials/alerts' %>
+  <link rel="shortcut icon" type="image/png" href="<%= asset_pack_path('media/images/bbq.png') %>">
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <div class="container py-3">
+    <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <%= link_to t('app.name'), root_path, class: "d-flex align-items-center text-dark text-decoration-none fs-4" %>
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <% if user_signed_in? %>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%= t('app.header_greetings') %><%= current_user.name %></span>
+        <%= link_to 'Profile', current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <% else %>
+        <%= link_to t('views.signingin.sign_in'), new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <%= link_to t('views.registrations.sign_up'), new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <% end %>
+      </nav>
+    </header>
+    <%= render 'partials/alerts' %>
     <%= yield %>
+  </div>
+  <footer class="footer mt-auto py-2 bg-light">
+    <div class="container text-muted">
+      <span><%= t('app.footer')%></span>
+      <script>
+        document.write("&copy; " + new Date().getFullYear());
+      </script>
     </div>
-    <footer class="footer mt-auto py-2 bg-light">
-      <div class="container text-muted">
-        <span><%= t('app.footer')%></span>
-        <script>
-          document.write("&copy; "+ new Date().getFullYear());
-        </script>
-      </div>
-    </footer>
-  </body>
+  </footer>
+</body>
+
 </html>

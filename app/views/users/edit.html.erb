@@ -1,11 +1,11 @@
-<h1>Profile edit</h1>
+<h1><%= t('views.users.edit.header') %></h1>
 
 <div class="row">
   <div class="col-md-6 buffer-top">
     <%= render 'form' %>
 
     <p class="buffer-top">
-      <%= link_to 'Password change', edit_user_registration_path %>
+      <%= link_to t('views.users.edit.psswd_change'), edit_user_registration_path %>
     </p>
   </div>
 </div>
