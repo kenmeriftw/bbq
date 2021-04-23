@@ -10,11 +10,8 @@
     </span>
       <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
-    <%= link_to(
-            event_comment_path(comment.event, comment),
-            method: :delete, class: "fa fa-trash",
-            data: { confirm: t('.destroy_confirm') }
-          ) %>
+    <%= link_to t('views.comments.delete'), event_comment_path(comment.event, comment),
+      method: :delete, data: { confirm: t('views.sure') }, class: 'btn btn-outline-danger btn-sm' %>
     <% end %>
   </p>
 </div>
