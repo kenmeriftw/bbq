@@ -18,7 +18,7 @@
         <%= render partial: 'events/event', collection: @user.events %>
       </div>
       <% else %>
-      <p class="buffer-top">User is shy and organized null events yet</p>
+      <p class="buffer-top"><%= t('views.users.show.subheader_shy') %></p>
       <% end %>
     </div>
   </div>
