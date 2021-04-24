@@ -26,7 +26,6 @@ class SubscriptionsController < ApplicationController
   end
 
   private
-
   def set_subscription
     @subscription = @event.subscriptions.find(params[:id])
   end
