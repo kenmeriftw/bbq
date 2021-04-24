@@ -19,8 +19,8 @@
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <% if user_signed_in? %>
         <span class="me-3 py-2 text-dark text-decoration-none"><%= t('app.header_greetings') %><%= current_user.name %></span>
-        <%= link_to 'Profile', current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <%= link_to t('views.signedin.profile'), current_user, class: "me-3 py-2 text-dark text-decoration-none" %>
+        <%= link_to t('views.signedin.logout'), destroy_user_session_path, method: :delete, class: "me-3 py-2 text-dark text-decoration-none" %>
         <% else %>
         <%= link_to t('views.signingin.sign_in'), new_user_session_path, class: "me-3 py-2 text-dark text-decoration-none" %>
         <%= link_to t('views.registrations.sign_up'), new_user_registration_path, class: "me-3 py-2 text-dark text-decoration-none" %>

@@ -76,6 +76,9 @@ ru:
       header: "Пожалуйста, войдите в систему"
       remme: "Запомнить меня"
       sign_in: "Войти"
+    signedin:
+      profile: 'Ваш профиль'
+      logout: 'Выйти'
     devise_links:
       forgot: "Забыли пароль?"
     partials:
