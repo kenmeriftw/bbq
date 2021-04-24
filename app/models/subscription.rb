@@ -8,7 +8,8 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
-  validate :event_ovner
+  validate :event_owner
+  validate :email_is_free
 
   def user_name
     if user.present?
@@ -27,9 +28,15 @@ class Subscription < ApplicationRecord
   end
 
   private
-  def event_ovner
+  def event_owner
     if user&.id == event&.user_id
       errors.add(:user, "не должен быть создателем события")
+    end
+  end
+
+  def email_is_free
+    if User.all.map(&:email).include? user_email
+      errors.add(:email, "уже занят другим пользователем")
     end
   end
 end
