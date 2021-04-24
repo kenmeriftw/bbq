@@ -1,4 +1,6 @@
 class Subscription < ApplicationRecord
+  model_name.instance_variable_set(:@route_key, 'subscription')
+  
   belongs_to :event
   belongs_to :user, optional: true
 

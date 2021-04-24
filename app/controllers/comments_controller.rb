@@ -26,13 +26,12 @@ class CommentsController < ApplicationController
   end
 
   private
-
   def set_event
     @event = Event.find(params[:event_id])
   end
 
   def set_comment
-    @comment = @event.comment.find(params[:id])
+    @comment = @event.comments.find(params[:id])
   end
 
   def comment_params

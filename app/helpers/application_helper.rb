@@ -6,11 +6,15 @@ module ApplicationHelper
       when :error then "alert-danger"
       when :alert then "alert-warning"
       else "alert-#{flash_type}"
-      end
+    end
   end
 
   def user_avatar(user)
     # TODO
     asset_pack_path('media/images/userpic.jpeg')
+  end
+
+  def fa_icon(icon_class)
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
   end
 end

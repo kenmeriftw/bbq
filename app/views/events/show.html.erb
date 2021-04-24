@@ -1,4 +1,4 @@
-<div class="col-md-6 text-center">
+<div class="col-md-8 text-center">
   <div class="img-thumbnail">
 
     <%= content_tag 'div', '', class: 'event-background' %>
@@ -23,12 +23,15 @@
   <div class="row">
     <div class="col-md-8">
       <div class="event-comments buffer-top">
+        <%= render partial: 'comments/form',
+          locals: {comment: @new_comment || @event.comments.build} %>
         <div class="buffer-both">
-          <%= render partial: 'comments/comment', collection: @event.comments %>
+          <%= render partial: 'comments/comment',
+            collection: @event.comments.except(@new_comment) %>
         </div>
       </div>
     </div>
-    
+
     <div class="col-md-4">
       <div class="event-owner">
         <h4>Зовет:</h4>
@@ -38,17 +41,20 @@
         <h4>Пойдут:</h4>
         <div>
           <p>
-            <%= render(
-              partial: 'subscriptions/subscription',
-              collection: @event.subscriptions 
-              ) %>
+            <%= render partial: 'subscriptions/subscription',
+              collection: @event.subscriptions.except(@new_subscription) %>
           </p>
         </div>
       </div>
-      <div class="event-subscriptions-form">
+      <div class="event-subscription-form">
         <h4>Я пойду:</h4>
-        
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+      subscription: @new_subscription || @event.subscriptions.build
+    } %>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -1,20 +1,19 @@
-<% errors = model.errors %>
+<%= form_for [@event, comment] do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
-<% if errors.any? %>
-<div class="alert alert-danger">
-  <div class="lead buffer-bottom">
-    <%= t('views.partials.form_errors') %><%= t :mistake, count: errors.count %>
-  </div>
-  <ul>
-    <% model.errors.each do |error| %>
-    <li><%= error.attribute %> <%= error.message %></li>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+
+    <% unless user_signed_in? %>
+        <div class="form-group">
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name, class: 'form-control' %>
+        </div>
     <% end %>
-  </ul>
-</div>
-<% end %>
 
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+    </div>
 <% end %>
