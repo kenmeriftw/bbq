@@ -28,15 +28,16 @@ class Subscription < ApplicationRecord
   end
 
   private
+
   def event_owner
     if user&.id == event&.user_id
-      errors.add(:user, "не должен быть создателем события")
+      errors.add(:user, I18n.t('views.subscriptions.error_owner'))
     end
   end
 
   def email_is_free
-    if User.all.map(&:email).include? user_email
-      errors.add(:email, "уже занят другим пользователем")
+    if User.exists?(email: user_email)
+      errors.add(:email, I18n.t('views.subscriptions.error_email'))
     end
   end
 end
