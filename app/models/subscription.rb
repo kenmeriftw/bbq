@@ -9,7 +9,7 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
   validate :event_owner
-  validate :email_is_free
+  validate :email_is_free, unless: -> { user.present? }
 
   def user_name
     if user.present?
@@ -30,7 +30,7 @@ class Subscription < ApplicationRecord
   private
 
   def event_owner
-    if user&.id == event&.user_id
+    if user == event.user
       errors.add(:user, I18n.t('views.subscriptions.error_owner'))
     end
   end
