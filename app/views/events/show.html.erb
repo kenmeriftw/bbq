@@ -1,22 +1,30 @@
-<div class="col-md-8 text-center">
-  <div class="img-thumbnail">
+<div class="event">
+  <div class="event-info row">
+    <div class="col-md-12">
+      <%# Выводим произвольную фотку в качестве фона для шапки события %>
+      <%= content_tag 'div', '', class: 'event-background',
+        style: "background-image: url(#{event_photo(@event)})" %>
 
-    <%= content_tag 'div', '', class: 'event-background' %>
+      <div class="event-info-inner row">
+        <div class="col-md-6">
+          <div class="event-description">
+            <h1><%= @event.title %></h1>
+            <h3><%= l @event.datetime, format: :short %></h3>
+            <h3>
+              <small><%= link_to @event.address,
+                "https://yandex.ru/maps/?text=#{@event.address}" %></small>
+            </h3>
+            <p><%= @event.description %></p>
+          </div>
 
-    <div class="thumbnail-inner event-info-inner">
-      <div class="caption">
-        <div class="event-description">
-          <%= link_to @event.title, event_path(@event), class: "fs-5 text-decoration-none" %>
-          <p class="fs-6 text-muted"><%= l @event.datetime, format: :long %></p>
-          <div class="buffer-both"><%= @event.address %></div>
+          <% if current_user_can_edit?(@event) %>
+            <div class="buffer-both">
+              <%= link_to 'Изменить', edit_event_path(@event),
+                class: 'btn btn-primary' %>
+            </div>
+          <% end %>
         </div>
       </div>
-      <% if current_user_can_edit?(@event) %>
-        <div class="buffer-top">
-          <%= link_to t('controllers.events.edit'), edit_event_path(@event), class: 'btn btn-outline-primary' %>
-          <%= link_to t('controllers.events.delete'), @event, method: :delete, data: { confirm: t('views.sure') }, class: 'btn btn-outline-danger' %>
-        </div>
-      <% end %>
     </div>
   </div>
 

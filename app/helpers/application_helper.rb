@@ -25,7 +25,7 @@ module ApplicationHelper
     end
   end
 
-  def event_photo
+  def event_photo(event)
     photos = event.photos.persisted
 
     if photos.any?
