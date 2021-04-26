@@ -10,8 +10,7 @@ module ApplicationHelper
   end
 
   def user_avatar(user)
-    # TODO
-    asset_pack_path('media/images/userpic.jpeg')
+    user.avatar? ? user.avatar.url : asset_pack_path('media/images/userpic.jpeg')
   end
 
   def fa_icon(icon_class)

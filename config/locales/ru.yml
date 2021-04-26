@@ -5,6 +5,7 @@ ru:
       event: "Событие"
     attributes:
       user:
+        avatar: "Фото профиля"
         email: "Email"
         name: "Имя"
         password: "Пароль"
