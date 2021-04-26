@@ -8,6 +8,11 @@
           <p class="fs-6 text-muted"><%= l event.datetime, format: :long %></p>
           <div class="buffer-both"><%= event.address %></div>
         </div>
+        <div>
+          <% event.visitors.each do |user| %>
+            <%= image_tag user_avatar_thumb(user), class: "img-icon", title: user.name %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

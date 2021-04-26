@@ -10,11 +10,19 @@ module ApplicationHelper
   end
 
   def user_avatar(user)
-    user.avatar? ? user.avatar.url : asset_pack_path('media/images/userpic.jpeg')
+    if user.avatar?
+      user.avatar.url
+    else
+      asset_pack_path('media/images/userpic.jpeg')
+    end
   end
 
   def user_avatar_thumb(user)
-    user.avatar.thumb.url ? user.avatar.file.present? : asset_pack_path('media/images/userpic.jpeg')
+    if user.avatar.file.present?
+      user.avatar.thumb.url
+    else
+      asset_pack_path('media/images/userpic.jpeg')
+    end
   end
 
   def event_photo
@@ -33,7 +41,7 @@ module ApplicationHelper
     if photos.any?
       photos.sample.photo.thumb.url
     else
-      asset_pack_path('media/images/event_thumb.jpg')
+      asset_pack_path('media/images/event.jpg')
     end
   end
 
