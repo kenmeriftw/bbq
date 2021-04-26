@@ -1,0 +1,4 @@
+<div class="event-photo buffer-top">
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+  <%= I18n.t('views.photos.added_by') %><%= render partial: 'users/user', object: photo.user %>
+</div>

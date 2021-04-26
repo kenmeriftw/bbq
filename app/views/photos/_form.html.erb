@@ -1,0 +1,12 @@
+<%= form_for [@event, photo], html: { multipart: true } do |f| %>
+  <%= render partial: 'partials/form_errors', locals: { model: photo } %>
+
+  <div class="form-group">
+    <%= f.label :photo %>
+    <%= f.file_field :photo, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit I18n.t('views.upload'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
