@@ -8,8 +8,8 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
-  validate :event_owner
-  validate :email_is_free, unless: -> { user.present? }
+  validate :event_owner, if: -> { user.present? }
+  validate :email_is_free, if: -> { user.present? }
 
   def user_name
     if user.present?
@@ -30,14 +30,10 @@ class Subscription < ApplicationRecord
   private
 
   def event_owner
-    if user == event.user
-      errors.add(:user, I18n.t('views.subscriptions.error_owner'))
-    end
+    errors.add(:user, I18n.t('views.subscriptions.error_owner')) if user == event.user
   end
 
   def email_is_free
-    if User.exists?(email: user_email)
-      errors.add(:email, I18n.t('views.subscriptions.error_email'))
-    end
+    errors.add(:email, I18n.t('views.subscriptions.error_email')) unless User.exists?(email: user_email)
   end
 end
