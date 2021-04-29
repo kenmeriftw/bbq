@@ -70,7 +70,7 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     port: '587',
     user_name: 'bbq.eventer', # не используйте для тестов свои реальные ящики
-    password: '98624Yalta!',
+    password: 'password',
     authentication: 'plain',
     enable_starttls_auto: true
   }
