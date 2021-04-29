@@ -21,23 +21,21 @@ Bundler.require(*Rails.groups)
 
 module Bbq
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
 
     config.time_zone = 'Moscow'
 
     config.i18n.default_locale = :ru
     config.i18n.locale = :en
 
-    # Don't generate system test files.
     config.generators.system_tests = nil
+  end
+end
+
+module Mailjet
+  class Application < Rails::Application
+    # config.load_default 6.0
+    config.generators.system_tests = nil
+    config.action_mailer.delivery_method = :mailjet
   end
 end

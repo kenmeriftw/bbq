@@ -67,10 +67,10 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: 'in-v3.mailjet.com',
     port: '587',
-    user_name: 'bbq.eventer', # не используйте для тестов свои реальные ящики
-    password: 'password',
+    user_name: ENV["MAILJET_API_KEY"],
+    password: ENV["MAILJET_SECRET_KEY"],
     authentication: 'plain',
     enable_starttls_auto: true
   }
