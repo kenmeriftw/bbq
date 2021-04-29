@@ -97,6 +97,10 @@ GEM
       excon (~> 0.71)
       formatador (~> 0.2)
       mime-types
+    fog-google (0.2.0)
+      fog-core
+      fog-json
+      fog-xml
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
@@ -216,6 +220,7 @@ DEPENDENCIES
   devise
   devise-i18n
   fog-aws
+  fog-google
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)
