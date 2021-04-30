@@ -26,7 +26,14 @@ ru:
         user_email: "Ваш email"
       photo:
         photo: "Фотография"
-
+  events:
+    show:
+      edit: "Изменить"
+  upload: "Загрузить"
+  post_comment: "Оставить комментарий"
+  subscribe: "Подписаться"
+  inviter: "Организатор события:"
+  invited: "На событие приглашены:"      
   controllers:
     events:
       created: "Событие было успешно создано"
@@ -81,7 +88,6 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
-
   views:
     sure: "Вы уверены?"
     save: "Сохранить"
