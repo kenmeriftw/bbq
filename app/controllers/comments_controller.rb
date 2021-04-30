@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
-    if @new_comment.save
+    if @new_comment.save && @new_comment.user.present?
       notify_subscribers(@event, @new_comment)
+      redirect_to @event, notice: I18n.t('controllers.comments.created')
+    elsif @new_comment.save
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
       render 'events/show', alert: I18n.t('controllers.comments.error')
