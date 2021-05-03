@@ -80,6 +80,7 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      link: 'Ссылка на событие'
     subscription:
       title: 'Новая подписка'
       name: 'Имя'
@@ -88,6 +89,7 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      link: 'Ссылка на событие'
   views:
     sure: "Вы уверены?"
     save: "Сохранить"
