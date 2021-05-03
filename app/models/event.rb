@@ -13,6 +13,10 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :datetime, presence: true
 
+  def pincode_valid?(pin)
+    pincode == pin
+  end
+  
   def visitors
     (subscribers + [user]).uniq
   end

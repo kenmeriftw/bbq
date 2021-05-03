@@ -18,6 +18,7 @@ ru:
         address: "Место проведения"
         datetime: "Дата и время"
         description: "Описание"
+        pincode: "Пароль доступа"
       comment:
         body: "Текст комментария"
         user_name: "Ваше имя"
@@ -41,6 +42,8 @@ ru:
       destroyed: "Событие было успешно удалено"
       edit: "Изменить событие"
       delete: "Удалить событие"
+      wrong_pincode: "Неверный пароль!"
+      empty_pincode: "Пароль не может быть пустым!"
     users:
       updated: "Профиль успешно обновлен"
     comments:
@@ -107,6 +110,9 @@ ru:
         header: "Отредактировать событие"
       new:
         header: "Создать новое событие"
+      password_form:
+        header: "Для доступа к событию необходимо ввести пароль"
+        submit: "Ввести"
     users:
       edit:
         header: "Редактировать профиль"

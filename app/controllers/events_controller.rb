@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   before_action :set_event, only: :show
   before_action :set_current_user_event, only: %i[edit update destroy]
+  before_action :password_guard!, only: :show
 
   def index
     @events = Event.all
@@ -45,6 +46,10 @@ class EventsController < ApplicationController
 
   private
 
+  def event_params
+    params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
+  end
+
   def set_current_user_event
     @event = current_user.events.find(params[:id])
   end
@@ -53,8 +58,18 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  # редактируем параметры события
-  def event_params
-    params.require(:event).permit(:title, :address, :datetime, :description)
+  def password_guard!
+    return true if @event.pincode.blank?
+    return true if signed_in? && current_user == @event.user
+
+    if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
+      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
+    end
+
+    unless @event.pincode_valid?(cookies.permanent["events_#{@event.id}_pincode"])
+      flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
+      flash.now[:alert] = I18n.t('controllers.events.empty_pincode') if params[:pincode].blank?
+      render 'password_form'
+    end
   end
 end
