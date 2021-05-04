@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
     all_emails = (event.subscribers.pluck(:email) + [event.user.email] - [photo.user.email]).uniq
     
     all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_later
+      EventMailer.photo(event, photo, mail).deliver_now
     end
   end
   
