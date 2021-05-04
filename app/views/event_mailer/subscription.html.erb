@@ -12,4 +12,4 @@
 <%= t '.owner' %>
 <h4><%= @event.user.name %></h4>
 
-<%= link_to I18n.t('.link'), event_path %>
+<%= link_to @event.title, @event %>
