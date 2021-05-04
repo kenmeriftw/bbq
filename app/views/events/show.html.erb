@@ -79,4 +79,9 @@
       </div>
     </div>
   </div>
+  <div id="map" 
+  data-address="<%= @event.address %>" 
+  style="width: 100%; height: 300px">
+    <%= javascript_pack_tag 'map' %>
+  </div>
 </div>
