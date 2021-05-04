@@ -9,10 +9,9 @@
         <div class="col-md-6">
           <div class="event-description">
             <h1><%= @event.title %></h1>
-            <h3><%= l @event.datetime, format: :short %></h3>
+            <h3><%= l @event.datetime, format: :long %></h3>
             <h3>
-              <small><%= link_to @event.address,
-                "https://yandex.ru/maps/?text=#{@event.address}" %></small>
+              <small><%= @event.address %></small>
             </h3>
             <p><%= @event.description %></p>
           </div>
