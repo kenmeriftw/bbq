@@ -1,11 +1,9 @@
 <%= t '.title' %>
-----
-
-<%= @photo %>
-
-<%= t '.author' %>: <%= @photo.user %>
+<%= link_to t '.photo_link', @photo.photo.url %>
+<%= t '.author' %>: <%= @photo.user.name %>
 
 --------------------------------
-<%= t '.event' %>: <%= @event.title %>
-<%= t '.datetime' %>: <%= l @event.datetime %>
+
+<%= t '.event' %>: <%= link_to @event.title, @event %>
+<%= t '.datetime' %> <%= l @event.datetime %>
 <%= t '.owner' %>: <%= @event.user.name %>

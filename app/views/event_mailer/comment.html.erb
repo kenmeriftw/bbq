@@ -1,16 +1,9 @@
 <h1><%= t '.title' %></h1>
-<p><%= @comment.body %></p>
-<p><%= t '.author' %>: <strong><%= @comment.user_name %></strong></p>
+<h3><%= @comment.body %></h3>
+<p><%= t '.author' %>: <strong><%= link_to @comment.user_name %></strong></p>
 
 <hr/>
 
-<%= t '.event' %>
-<h3><%= link_to @event.title, @event %></h3>
-
-<%= t '.datetime' %>
-<h4><%= l @event.datetime %></h4>
-
-<%= t '.owner' %>
-<h4><%= @event.user.name %></h4>
-
-<%= link_to @event.title, @event %>
+<%= t '.event' %>: <%= link_to @event.title, @event %>
+<%= t '.datetime' %> <%= l @event.datetime %>
+<%= t '.owner' %>: <%= @event.user.name %>
