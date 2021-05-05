@@ -10,17 +10,17 @@ class PhotosController < ApplicationController
       notify_new_photo(@event, @new_photo)
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
-      render 'events/show', alert: I18n.t('controllers.photos.error')
+      render 'events/show', alert: I18n.t('controllers.photos.load_error')
     end
   end
 
   def destroy
     message = { notice: I18n.t('controllers.photos.destroyed') }
 
-    if current_user_can_edit?(@comment)
+    if current_user_can_edit?(@photo)
       @photo.destroy!
     else
-      message = { alert: I18n.t('controllers.photos.error') }
+      message = { alert: I18n.t('controllers.photos.destroy_error') }
     end
 
     redirect_to @event, message
@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
     all_emails = (event.subscribers.pluck(:email) + [event.user.email] - [photo.user.email]).uniq
     
     all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_now
+      EventMailer.photo(event, photo, mail).deliver_later
     end
   end
   
@@ -45,6 +45,6 @@ class PhotosController < ApplicationController
   end
 
   def set_photo
-    @photo = @event.cphotos.find(params[:id])
+    @photo = @event.photos.find(params[:id])
   end
 end
