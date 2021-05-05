@@ -1,5 +1,5 @@
 <%= t '.title' %>
-<%= link_to t '.photo_link', @photo.photo.url %>
+<%= link_to I18n.t('.photo_link'), @photo.photo.url %>
 <%= t '.author' %>: <%= @photo.user.name %>
 
 --------------------------------

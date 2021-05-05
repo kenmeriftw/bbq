@@ -1,6 +1,6 @@
 <h1><%= t '.title' %></h1>
 <h3><%= @comment.body %></h3>
-<p><%= t '.author' %>: <strong><%= link_to @comment.user_name %></strong></p>
+<p><%= t '.author' %>: <strong><%= link_to @comment.user_name, @comment.user_name %></strong></p>
 
 <hr/>
 

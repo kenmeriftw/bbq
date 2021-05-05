@@ -99,6 +99,7 @@ ru:
       event: "Событие"
       datetime: "Состоится"
       owner: "Фото загрузил"
+      authod: "Автор"
   views:
     sure: "Вы уверены?"
     save: "Сохранить"
