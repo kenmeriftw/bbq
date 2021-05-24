@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV["MAILJET_SENDER"]
+  default from: Rails.application.credentials.mailjet[:sender]
   layout 'mailer'
 end
 

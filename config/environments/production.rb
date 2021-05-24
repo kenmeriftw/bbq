@@ -98,19 +98,18 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  # Базовый URL сайта для правильных ссылок в письмах
-  # ПРОПИСЫВАЙТЕ свой!
-  config.action_mailer.default_url_options = {host: 'bbq-eventer.herokuapp.com/'}
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = {host: 'https://bbq-eventer.site/'}
+
   config.action_mailer.delivery_method = :smtp
 
-  ActionMailer::Base.smtp_settings = {
-    address:              'in-v3.mailjet.com',
-    port:                 '587',
-    authentication:       'plain',
-    user_name:            ENV["MAILJET_API_KEY"],
-    password:             ENV["MAILJET_SECRET_KEY"],
+  config.action_mailer.smtp_settings = {
+    address: 'in-v3.mailjet.com',
+    port: '587',
+    user_name: Rails.application.credentials.mailjet[:api_key],
+    password: Rails.application.credentials.mailjet[:secret_key],
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 end
