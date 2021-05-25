@@ -19,9 +19,9 @@ gem 'webpacker', '~> 5.0'
 group :development, :test do
   gem 'byebug'
   gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-rvm',     require: false
   gem 'pry-rails'
 end
