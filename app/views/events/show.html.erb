@@ -55,6 +55,7 @@
         <h4><%= I18n.t('.inviter')%></h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
+      <% if @event.subscriptions.exists? %>
       <div class="event-subscriptions">
         <h4><%= I18n.t('.invited')%></h4>
         <div>
@@ -64,6 +65,7 @@
           </p>
         </div>
       </div>
+      <% end %>
       <div class="event-subscription-form">
         <% unless @event.user == current_user %>
         <div>
