@@ -1,5 +1,3 @@
-require File.expand_path("./environment", __dir__)
-
 # Change these
 server 'bbq-eventer.site', user: 'deploy', roles: %w{app db web}
 
