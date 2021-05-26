@@ -107,8 +107,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'in-v3.mailjet.com',
     port: '587',
-    # user_name: Rails.application.credentials.mailjet[:api_key],
-    # password: Rails.application.credentials.mailjet[:secret_key],
+    user_name: Rails.application.credentials.mailjet[:api_key],
+    password: Rails.application.credentials.mailjet[:secret_key],
     authentication: 'plain',
     enable_starttls_auto: true
   }
