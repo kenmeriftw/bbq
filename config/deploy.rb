@@ -1,5 +1,5 @@
 # Change these
-server '167.172.45.101', port: 443, roles: [:web, :app, :db], primary: true
+server 'bbq-eventer.site', user: 'deploy', roles: %w{app db web}
 
 set :repo_url,        'git@github.com:knmrftw/bbq.git'
 set :application,     'bbq'
@@ -9,10 +9,8 @@ set :puma_workers,    0
 
 # Don't change these unless you know what you're doing
 set :pty,             true
-set :use_sudo,        false
 set :stage,           :production
-set :deploy_via,      :remote_cache
-set :deploy_to,       "/home/#{fetch(:user)}/www/#{fetch(:application)}"
+set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
@@ -22,6 +20,8 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+
+set :format, :pretty
 
 ## Defaults:
 # set :scm,           :git
