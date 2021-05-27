@@ -1,5 +1,5 @@
 # Change these
-server 'bbq-eventer.site', user: 'deploy', roles: %w{app db web}
+server 'bbq-eventer.site', user: 'deploy', roles: %w[app db web]
 
 set :repo_url,        'git@github.com:knmrftw/bbq.git'
 set :application,     'bbq'

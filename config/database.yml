@@ -84,4 +84,4 @@ production:
   adapter: postgresql
   user: deploy
   password: <%= Rails.application.credentials.database[:password] %>
-  database: myapp
+  database: bbq-eventer
