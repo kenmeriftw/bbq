@@ -1,9 +1,8 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-
-  before_action :set_event, only: :show
-  before_action :set_current_user_event, only: %i[edit update destroy]
+  before_action :set_event, except: %i[index]
   before_action :password_guard!, only: :show
+  after_action :verify_authorized, only: %i[update]
 
   def index
     @events = Event.all
@@ -33,6 +32,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
+      authorize @event
       redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
       render :edit
@@ -48,10 +48,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
-  end
-
-  def set_current_user_event
-    @event = current_user.events.find(params[:id])
   end
 
   def set_event

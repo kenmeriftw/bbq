@@ -30,6 +30,7 @@ ru:
   events:
     show:
       edit: "Изменить"
+      delete: "Удалить"
   upload: "Загрузить"
   post_comment: "Оставить комментарий"
   subscribe: "Подписаться"
@@ -152,3 +153,5 @@ ru:
       forgot: "Забыли пароль?"
     partials:
       form_errors: "В вашей форме"
+  pundit:
+    not_authorized: "Вам не разрешено это действие"
