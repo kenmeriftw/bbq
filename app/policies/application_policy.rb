@@ -1,11 +1,14 @@
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :context, :record, :user, :cookies
 
-  def initialize(user, record)
-    @user = user
+  delegate :user, to: :context
+  delegate :cookies, to: :context
+
+  def initialize(context, record)
+    @context = context
     @record = record
   end
-
+  
   def index?
     false
   end
