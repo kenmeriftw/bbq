@@ -24,5 +24,7 @@ group :development, :test do
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-rvm',     require: false
+  gem 'factory_bot_rails'
   gem 'pry-rails'
+  gem 'rspec-rails'
 end
