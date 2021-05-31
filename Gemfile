@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '2.7.2'
 
 gem 'carrierwave'
 gem 'devise'
@@ -9,13 +9,14 @@ gem 'devise-i18n'
 gem 'fog-aws'
 gem 'mailjet'
 gem 'dotenv-rails'
-gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
+gem 'pg'
+gem 'puma'
 gem 'pundit'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'rails'
+gem 'resque' 
 gem 'rmagick'
 gem 'russian'
-gem 'webpacker', '~> 5.0'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug'
