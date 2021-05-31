@@ -1,4 +1,12 @@
 class EventPolicy < ApplicationPolicy
+  def new?
+    user.present?
+  end
+  
+  def create?
+    user.present?
+  end
+
   def edit
     is_owner?
   end
@@ -15,6 +23,8 @@ class EventPolicy < ApplicationPolicy
     return true if record.pincode.blank?
     return true if is_owner?
     return true if record.pincode_valid?(cookies["events_#{record.id}_pincode"])
+
+    false
   end
 
   private

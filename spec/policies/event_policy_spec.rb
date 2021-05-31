@@ -29,6 +29,10 @@ RSpec.describe EventPolicy, type: :policy do
     let(:usual_user_pincodeless) { AuthorizationContext.new(usual_user, {}) }
     let(:usual_user_pincoded) { AuthorizationContext.new(usual_user, cookies) }
 
+    permissions :new?, :create? do
+      it { is_expected.to permit(usual_user_pincodeless) }
+    end
+
     permissions :destroy?, :edit?, :update?  do
       it { is_expected.not_to permit(usual_user_pincodeless, event_pincodeless) }
     end
@@ -42,6 +46,11 @@ RSpec.describe EventPolicy, type: :policy do
 
   context 'anon' do
     let (:anon_pincoded) { AuthorizationContext.new(nil, cookies) }
+    
+    permissions :new?, :create? do
+      it { is_expected.not_to permit(anon_pincoded) }
+    end
+
     permissions :destroy?, :edit?, :update?  do
       it { is_expected.not_to permit(anon_pincoded, event_pincoded) }
     end
