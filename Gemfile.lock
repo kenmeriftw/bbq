@@ -77,13 +77,13 @@ GEM
     capistrano-rails (1.6.1)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
+    capistrano-rbenv (2.2.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
     capistrano-resque (0.2.3)
       capistrano
       resque
       resque-scheduler
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     capistrano3-puma (5.0.4)
       capistrano (~> 3.7)
       capistrano-bundler
@@ -328,8 +328,8 @@ DEPENDENCIES
   capistrano
   capistrano-bundler
   capistrano-rails
+  capistrano-rbenv
   capistrano-resque
-  capistrano-rvm
   capistrano3-puma
   carrierwave
   devise
