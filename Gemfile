@@ -26,6 +26,7 @@ group :development, :test do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-rvm',     require: false
   gem 'factory_bot_rails'
+  gem 'letter_opener'
   gem 'pry-rails'
   gem 'rspec-rails'
 end

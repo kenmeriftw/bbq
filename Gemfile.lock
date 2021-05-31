@@ -146,6 +146,10 @@ GEM
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     ipaddress (0.8.3)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     loofah (2.9.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -315,6 +319,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   fog-aws
+  letter_opener
   mailjet
   pg
   pry-rails
