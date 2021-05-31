@@ -27,7 +27,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 set :format, :pretty
-set :linked_files, %w{config/master.key}
+set :linked_files, %w{config/credentials/production.key}
 
 ## Defaults:
 # set :scm,           :git
