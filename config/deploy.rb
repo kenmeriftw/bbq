@@ -1,5 +1,10 @@
 # Change these
-server 'bbq-eventer.site', user: 'deploy', roles: %w[app db web]
+server 'bbq-eventer.site', user: 'deploy', roles: %w[app db web resque_worker]
+
+set :resque_environment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }
+
+after 'deploy:restart', 'resque:restart'
 
 set :repo_url,        'git@github.com:knmrftw/bbq.git'
 set :application,     'bbq'

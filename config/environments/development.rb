@@ -5,7 +5,7 @@ require 'action_mailer'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.active_job.queue_adapter = :resque
+  config.active_job.queue_adapter = :async
   # Префикс для имени очередей
   config.active_job.queue_name_prefix = "bbq-eventer_#{Rails.env}"
 
