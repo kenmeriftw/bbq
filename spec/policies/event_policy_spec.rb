@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe EventPolicy, type: :policy do
-
   subject { described_class }
 
   let(:user) { FactoryBot.create(:user) }
@@ -45,7 +44,8 @@ RSpec.describe EventPolicy, type: :policy do
   end
 
   context 'anon' do
-    let (:anon_pincoded) { AuthorizationContext.new(nil, cookies) }
+    let(:anon_pincodeless) { AuthorizationContext.new(nil, {}) }
+    let(:anon_pincoded) { AuthorizationContext.new(nil, cookies) }
     
     permissions :new?, :create? do
       it { is_expected.not_to permit(anon_pincoded) }
@@ -57,6 +57,7 @@ RSpec.describe EventPolicy, type: :policy do
 
     permissions :show? do
       it { is_expected.to permit(anon_pincoded, event_pincoded) }
+      it { is_expected.to permit(anon_pincodeless, event_pincodeless)}
     end
   end
 end

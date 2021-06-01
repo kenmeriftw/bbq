@@ -32,9 +32,9 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+    authorize @event
 
     if @event.save
-      authorize @event
       redirect_to @event, notice: I18n.t('controllers.events.created')
     else
       render :new
@@ -42,8 +42,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    authorize @event
     if @event.update(event_params)
-      authorize @event
       redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
       render :edit
