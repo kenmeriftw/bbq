@@ -1,5 +1,14 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
   def facebook
+    omniauth_provider
+  end
+
+  def vkontakte
+    omniauth_provider
+  end
+
+  def omniauth_provider
     @user = User.find_for_oauth(request.env['omniauth.auth'])
     oauth_provider = request.env['omniauth.auth'].provider
 
