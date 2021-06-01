@@ -17,6 +17,6 @@ set :stage,           :production
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :format, :pretty
-set :linked_files, %w{config/credentials/production.key}
+set :linked_files, %w{config/credentials/master.key}
 
 set :passenger_restart_with_touch, false
