@@ -20,12 +20,12 @@ gem 'webpacker'
 
 group :development, :test do
   gem 'byebug'
-  gem 'capistrano',         require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-resque',  require: false
-  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano',           require: false
+  gem 'capistrano-bundler',   require: false
+  gem 'capistrano-passenger', require: false
+  gem 'capistrano-rails',     require: false
+  gem 'capistrano-resque',    require: false
+  gem 'capistrano-rbenv',     require: false
   gem 'factory_bot_rails'
   gem 'letter_opener'
   gem 'pry-rails'

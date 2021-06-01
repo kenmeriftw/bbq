@@ -29,6 +29,8 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 set :format, :pretty
 set :linked_files, %w{config/credentials/production.key}
 
+set :passenger_restart_with_touch, false
+
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master

@@ -1,19 +1,16 @@
 # Load DSL and Setup Up Stages
-require 'sshkit/sudo'
+
 require 'capistrano/setup'
 require 'capistrano/deploy'
-
 require 'capistrano/rails'
 require 'capistrano/bundler'
+require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano-resque'
-
-require 'capistrano/puma'
-install_plugin Capistrano::Puma
-install_plugin Capistrano::Puma::Systemd
-
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
+
+require 'sshkit/sudo'
 
 set :rbenv_ruby, '2.7.2'
 
