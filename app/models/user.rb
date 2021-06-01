@@ -13,16 +13,16 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  private
-
   def self.find_for_oauth(access_token)
     email = access_token.info.email
     user = where(email: email).first
 
     return user if user.present?
 
+    name = access_token.info.name
     provider = access_token.provider
     id = access_token.extra.raw_info.id
+    image_url = access_token.info.image.gsub('http://','https://')
 
     case provider
     when 'facebook'
@@ -33,9 +33,13 @@ class User < ApplicationRecord
 
     where(social_url: social_url, provider: provider).first_or_create! do |user|
       user.email = email
+      user.name = name
+      user.avatar_url = image_url
       user.password = Devise.friendly_token.first(16)
     end
   end 
+
+  private
 
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: email).update_all(user_id: id)
