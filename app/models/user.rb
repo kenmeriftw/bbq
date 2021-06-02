@@ -34,7 +34,7 @@ class User < ApplicationRecord
     where(social_url: social_url, provider: provider).first_or_create! do |user|
       user.email = email
       user.name = name
-      user.avatar_url = image_url
+      user.remote_avatar_url = image_url
       user.password = Devise.friendly_token.first(16)
     end
   end 
