@@ -12,7 +12,12 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider),
-    method: :post %><br />
+    <% if OmniAuth::Utils.camelize(provider) == 'Facebook' %>
+      <%= link_to fab_icon('facebook'), omniauth_authorize_path(resource_name, provider),
+        method: :post %>
+    <% elsif OmniAuth::Utils.camelize(provider) == 'Vkontakte' %>
+      <%= link_to fab_icon('vk'), omniauth_authorize_path(resource_name, provider),
+        method: :post %>
+    <% end%>
   <% end %>
 <% end %>

@@ -1,7 +1,7 @@
 <% if photo.photo.url.present? %>
   <% image_title = "Добавил #{render partial: 'users/user', object: photo.user} 
   #{link_to(
-      fa_icon('trash'), event_photo_path(photo.event, photo), 
+      fas_icon('trash'), event_photo_path(photo.event, photo), 
       method: :delete, 
       data: { confirm: t('.destroy_confirm')}
       )}" %>

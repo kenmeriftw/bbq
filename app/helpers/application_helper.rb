@@ -45,7 +45,11 @@ module ApplicationHelper
     end
   end
 
-  def fa_icon(icon_class)
-    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  def fas_icon(icon_class)
+    content_tag 'span', '', class: "fas fa-#{icon_class}"
+  end
+
+  def fab_icon(icon_class)
+    content_tag 'span', '', class: "fab fa-#{icon_class}"
   end
 end
