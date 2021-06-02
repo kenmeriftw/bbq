@@ -22,12 +22,13 @@ class User < ApplicationRecord
     name = access_token.info.name
     provider = access_token.provider
     id = access_token.extra.raw_info.id
-    image_url = access_token.info.image.gsub('http://','https://')
-
+    
     case provider
     when 'facebook'
+      image_url = access_token.info.image.gsub('http://','https://')
       social_url = "https://facebook.com/#{id}"
     when 'vkontakte'
+      image_url = access_token.extra.raw_info.photo_400_orig.gsub('http://','https://')
       social_url = "https://vk.com/#{id}"
     end
 
