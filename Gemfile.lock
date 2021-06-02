@@ -79,6 +79,8 @@ GEM
     capistrano-rails (1.6.1)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
+    capistrano-rails-db (0.0.2)
+      capistrano-rails (~> 1.1)
     capistrano-rbenv (2.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
@@ -369,6 +371,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-passenger
   capistrano-rails
+  capistrano-rails-db
   capistrano-rbenv
   capistrano-resque
   carrierwave

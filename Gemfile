@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capistrano',           require: false
   gem 'capistrano-bundler',   require: false
+  gem 'capistrano-rails-db',  require: false
   gem 'capistrano-passenger', require: false
   gem 'capistrano-rails',     require: false
   gem 'capistrano-resque',    require: false
