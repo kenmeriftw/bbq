@@ -274,7 +274,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :facebook, Rails.application.credentials.omniauth[:facebook_id],
-    Rails.application.credentials.omniauth[:facebook_secret]
+    Rails.application.credentials.omniauth[:facebook_secret], image_size: 'large'
 
   config.omniauth :vkontakte, Rails.application.credentials.omniauth[:vkontakte_id],
     Rails.application.credentials.omniauth[:vkontakte_secret], scope: 'name, email'
