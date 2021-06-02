@@ -34,10 +34,11 @@
   </div>
   <footer class="footer mt-auto py-2 bg-light">
     <div class="container text-muted">
-      <span><%= t('app.footer')%></span>
+      <span><%= t('app.footer')%> &copy;</span>
       <script>
-        document.write("&copy; " + new Date().getFullYear());
+        document.write(new Date().getFullYear());
       </script>
+      <%= link_to I18n.t('app.privacy'), "/privacy.html", class: "me-3 py-2 text-dark text-decoration-none" %>
     </div>
   </footer>
 </body>

@@ -68,6 +68,7 @@ ru:
     name: "Шашлыки"
     header_greetings: "Привет, "
     footer: "чё там по шашлыкам?"
+    privacy: "Соглашение об обработке персональных данных"
 
   comments:
     comment:
