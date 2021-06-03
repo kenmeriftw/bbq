@@ -8,11 +8,12 @@ ru:
       photo: "Фотография"
     attributes:
       user:
-        avatar: "Фото профиля"
-        email: "Email"
-        name: "Имя"
+        avatar: "Фотография профиля"
+        email: "Электронная почта"
+        name: "Имя пользователя"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+        provider: "Ассоциированная социальная сеть"
       event:
         title: "Название"
         address: "Место проведения"
@@ -27,6 +28,70 @@ ru:
         user_email: "Ваш email"
       photo:
         photo: "Фотография"
+  app:
+    name: "Шашлыки"
+    header_greetings: "Привет, "
+    footer: "чё там по шашлыкам?"
+    privacy: "Соглашение об обработке персональных данных"      
+  devise:
+    registrations:
+      edit:
+        header: "Редактировать регистрационные данные"
+        leave_blank: "оставьте поля пустыми, если не хотите их изменять"
+        save: "Сохранить"
+        or: "или"
+        go_back: "вернуться назад"
+        characters_minimum: "символов минимум"
+        current_password: "для изменения пароля необходимо ввести Ваш текущий пароль"
+        
+
+
+
+  cancel_account: "Удалить мой профиль"
+  sure: "Вы уверены?"
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   events:
     show:
       edit: "Изменить"
@@ -64,11 +129,9 @@ ru:
       load_error: "Не удалось загрузить фотографию"
       destroyed: "Фотография удалена"
 
-  app:
-    name: "Шашлыки"
-    header_greetings: "Привет, "
-    footer: "чё там по шашлыкам?"
-    privacy: "Соглашение об обработке персональных данных"
+  
+
+  
 
   comments:
     comment:
@@ -125,8 +188,7 @@ ru:
         header: "Создать новое событие"
       password_form:
         header: "Для доступа к событию необходимо ввести пароль"
-        submit: "Ввести"
-    users:
+        submit: "Ввести"        
       edit:
         header: "Редактировать профиль"
         psswd_change: "Сменить пароль"
