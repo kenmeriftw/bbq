@@ -32,7 +32,7 @@ ru:
     name: "Шашлыки"
     header_greetings: "Привет, "
     footer: "чё там по шашлыкам?"
-    privacy: "Соглашение об обработке персональных данных"      
+    privacy: "Соглашение об обработке персональных данных"
   devise:
     registrations:
       edit:
@@ -43,55 +43,8 @@ ru:
         go_back: "вернуться назад"
         characters_minimum: "символов минимум"
         current_password: "для изменения пароля необходимо ввести Ваш текущий пароль"
-        
-
-
-
   cancel_account: "Удалить мой профиль"
   sure: "Вы уверены?"
-        
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   events:
     show:
       edit: "Изменить"
@@ -100,7 +53,7 @@ ru:
   post_comment: "Оставить комментарий"
   subscribe: "Подписаться"
   inviter: "Организатор события:"
-  invited: "На событие приглашены:"      
+  invited: "На событие приглашены:"
   controllers:
     events:
       created: "Событие было успешно создано"
@@ -128,23 +81,16 @@ ru:
       destroy_error: "Не удалить удалить эту фотографию"
       load_error: "Не удалось загрузить фотографию"
       destroyed: "Фотография удалена"
-
-  
-
-  
-
   comments:
     comment:
       destroy_confirm: "Вы уверены, что хотите удалить этот комментарий?"
   photos:
     photo:
       destroy_confirm: "Вы действительно хотите удалить фотографию?"
-
   mistake:
     one: "%{count} ошибка"
     few: "%{count} ошибки"
     many: "%{count} ошибок"
-
   event_mailer:
     comment:
       title: 'Новый комментарий'
@@ -188,7 +134,8 @@ ru:
         header: "Создать новое событие"
       password_form:
         header: "Для доступа к событию необходимо ввести пароль"
-        submit: "Ввести"        
+        submit: "Ввести"
+    users:
       edit:
         header: "Редактировать профиль"
         psswd_change: "Сменить пароль"

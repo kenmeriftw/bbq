@@ -152,3 +152,7 @@ ru:
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
   cancel_account: ""
+  views:
+    users:
+      show:
+        subheader: ""
