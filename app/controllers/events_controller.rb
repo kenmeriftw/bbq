@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_action :set_event, except: %i[create index new]
 
   after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
 
   def index
     @events = policy_scope(Event)
