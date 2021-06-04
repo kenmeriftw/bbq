@@ -30,4 +30,5 @@
   </div>
 <% end %>
 
-<p><%= t('.unhappy') %> <%= button_to I18n.t('.cancel_account'), registration_path(resource_name), data: { confirm: I18n.t('.sure') }, method: :delete %></p>
+<p><%= t('.unhappy') %> <%= button_to I18n.t('.cancel_account'), registration_path(resource_name), 
+  class: 'btn btn-outline-danger', data: { confirm: I18n.t('.sure') }, method: :delete %></p>
