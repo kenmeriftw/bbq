@@ -94,7 +94,7 @@ ru:
   event_mailer:
     comment:
       title: 'Новый комментарий'
-      author: 'Автор'
+      author: 'Автор комментария'
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
@@ -103,7 +103,7 @@ ru:
       title: 'Новая подписка'
       name: 'Имя'
       email: 'Email'
-      author: 'Автор'
+      author: 'Подписался'
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
@@ -113,8 +113,8 @@ ru:
       photo_link: "Ссылка на фотографию"
       event: "Событие"
       datetime: "Состоится"
-      owner: "Фото загрузил"
-      authod: "Автор"
+      owner: "Организатор"
+      author: "Автор фотографии"
   views:
     sure: "Вы уверены?"
     save: "Сохранить"

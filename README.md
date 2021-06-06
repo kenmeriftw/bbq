@@ -23,6 +23,7 @@ Application is deployed on [VPS](https://bbq-eventer.site/) now, I will be glad 
 - `OAuth2`-standarted authorization via `Facebook` and `VK` social networks accounts
 - Localized via `I18n` gem
 - Bootstraped via `bootstrap-5.0.0`
+- Photo gallery organized via `lightbox-gallery`
 
 If you are going to run this application locally on your machine clone this repo using
 ```
