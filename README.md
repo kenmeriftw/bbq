@@ -2,11 +2,14 @@
 
 Thank you for visiting this repository!
 
-You can find here an Ruby on Rails web application for eventers - people who are fond of organizing events and inviting their friends. Create an account using standard email+password combination or just link your social networks (now there are Facebook and VK integration available), 
+You can find here an Ruby on Rails web application for eventers - people who are fond of organizing events and inviting 
+their friends. Create an account using standard email+password combination or just link your social networks (now there 
+are Facebook and VK integration available), 
 
 ![alt text](https://media.giphy.com/media/NJbAyhkzSd5dvwwTMP/giphy.gif)
 
-create your own events or subscribe on your friend's one, leave a comments or pin the photos of fun you've had recently, get the e-mail notification about all the interesting updates about events you subscribed on.
+create your own events or subscribe on your friend's one, leave a comments or pin the photos of fun you've had recently,
+get the e-mail notification about all the interesting updates about events you subscribed on.
 
 ![alt text](https://media.giphy.com/media/tDoZIuJ3MIEKmXvsns/giphy.gif)
 
@@ -27,7 +30,7 @@ git clone git@github.com:knmrftw/bbq.git
 ```
 and make `cd` into new directory.
 You have to install `ruby-2.7.2` or just skip this step if you have it installed previously on your machine.
-Run 
+Run
 ```
 bundle
 ```
