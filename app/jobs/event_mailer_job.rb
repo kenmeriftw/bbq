@@ -2,7 +2,7 @@ class EventMailerJob < ApplicationJob
   queue_as :default
 
   def perform(event, object)
-    all_emails = (event.subscriptions.map(&:email) + [event.user.email] - [object.user&.email]).uniq
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [object.user&.email]).uniq
 
     case object
     when Photo
