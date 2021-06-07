@@ -55,3 +55,15 @@ omniauth:
   vkontakte_id: 
   vkontakte_secret:
 ```
+
+Finally, run 
+```
+rails s
+``` 
+to start local server and 
+```
+bin/webpack-dev-server
+``` 
+to start webpacker server.
+
+By default, your application will be available at `localhost:3000` link
